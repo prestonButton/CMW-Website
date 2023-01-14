@@ -1,5 +1,6 @@
 * {
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -8,31 +9,6 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   background-color: #030023de;
   color: #fff;
-  scroll-behavior: smooth;
-}
-
-/* Style the header */
-.header {
-  overflow: hidden;
-  padding: 20px 10px;
-  text-align: center;
-}
-
-.header > h1 {
-  font-size: 100px;
-  font-weight: 700;
-  margin: 0;
-  margin-top: 70px;
-}
-
-.header > hr {
-  width: 60%;
-}
-
-.header > h2 {
-  font-size: 30px;
-  font-weight: 400;
-  margin-top: 25;
 }
 
 /* style the nav element */
@@ -65,7 +41,7 @@ body {
 .nav > a:after {
   content: "";
   position: absolute;
-  background-color: #50e3c2;
+  background-color: #50e3c3ae;
   height: 1px;
   width: 0;
   left: 0;
@@ -73,10 +49,34 @@ body {
   transition: 0.3s;
 }
 .nav > a:hover {
-  color: #50e3c2;
+  color: #50e3c2ae;
 }
 .nav > a:hover:after {
   width: 100%;
+}
+
+/* Style the header */
+.header {
+  overflow: hidden;
+  padding: 20px 10px;
+  text-align: center;
+}
+
+.header > h1 {
+  font-size: 100px;
+  font-weight: 700;
+  margin: 0;
+  margin-top: 70px;
+}
+
+.header > hr {
+  width: 60%;
+}
+
+.header > h2 {
+  font-size: 30px;
+  font-weight: 400;
+  margin-top: 25;
 }
 
 /* Slideshow container */
@@ -84,6 +84,12 @@ body {
   max-width: 1000px;
   position: relative;
   margin: auto;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 /* Hide the images by default */
@@ -143,6 +149,7 @@ body {
 /* The dots/bullets/indicators */
 .dotsDiv {
   text-align: center;
+  padding-bottom: 1rem;
 }
 
 .dot {
@@ -174,4 +181,85 @@ body {
   to {
     opacity: 1;
   }
+}
+
+/* Style about section */
+.aboutContainer {
+  padding: 50px;
+  text-align: center;
+  background-color: #030023;
+  color: #fff;
+}
+
+.aboutParagraph {
+  max-width: 1000px;
+  font-size: 20px;
+  font-weight: 400;
+  margin: auto;
+  margin-top: 25px;
+}
+
+/* style the contact section */
+.contactForm {
+  padding: 50px;
+  text-align: center;
+  color: #fff;
+}
+
+.contactForm > form {
+  width: 60vw;
+  max-width: 700px;
+  min-width: 300px;
+  margin: 0 auto;
+  padding: 1em;
+}
+
+.sectionHeader {
+    font-size: 2rem;
+}
+
+.contactForm label {
+    text-align: left;
+  display: block;
+  margin: 1rem 0 0.5rem 0;
+}
+
+input,
+textarea,
+select {
+  margin: 10px 0 0 0;
+  width: 100%;
+  min-height: 2.5em;
+}
+
+input,
+textarea {
+  background-color: #0a0a23;
+  border: 1px solid #0a0a23;
+  color: #ffffff;
+}
+textarea {
+  min-height: 10em;
+}
+
+input[type="submit"] {
+  display: block;
+  width:fit-content;
+  margin: 1em auto;
+  height: 2em;
+  font-size: 1.1rem;
+  background-color: #3b3b4f;
+  border-color: white;
+  min-width: 300px;
+}
+
+input[type="submit"]:hover {
+  background-color: #53536a;
+}
+
+.footer {
+  background-color: #030023;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
 }
