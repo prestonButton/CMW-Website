@@ -6,10 +6,27 @@
     <meta name="viewport" content="width=device-width" />
     <title>Community Metalworks</title>
     <link href="styles.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
   </head>
 
   <body>
+    
+
+    <div class="nav" id="nav">
+      <!-- add logo on left side -->
+      <div class="logoDiv">
+        <img class = 'logo' src="assets/logo.png" alt="logo" />
+      </div>
+      <a href="javascript:void(0);" class="icon" onclick="responsive()">
+        <i class="fa fa-bars"></i>
+      </a>
+      <a href="#contactForm" >Contact</a>
+      <a href="#aboutContainer" >About</a>
+      <a href="index.html" >Home</a>
+      
+    </div>
+    
     <div class="header" id="header">
       <h1>Community Metalworks</h1>
       <hr />
@@ -17,19 +34,7 @@
       <p>24 Riverview Drive, Marlboro, N.Y. 12542</p>
     </div>
 
-    <div class="nav" id="nav">
-      <!-- add logo on left side -->
-      <div class="logoDiv">
-        <img class = 'logo' src="assets/logo.png" alt="logo" />
-      </div>
-      <a href="#contactForm">Contact</a>
-      <a href="#aboutContainer">About</a>
-      <a href="index.html">Home</a>
-    </div>
-
     <div class="main" id="main">
-      <!-- Here add the Images and a brief description of the company -->
-
       <!-- Slideshow container -->
       <div class="slideshow-container">
         <!-- Full-width images with number and caption text -->
@@ -48,7 +53,7 @@
       </div>
 
 
-      <section class="aboutContainer" id="aboutContainer">
+      <div class="aboutContainer" id="aboutContainer">
         <h3 class="sectionHeader" id="aboutHeader">About Us</h3>
 
         <p class="aboutParagraph" id="aboutParagraph">
@@ -60,31 +65,32 @@
           pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
           culpa qui officia deserunt mollit anim id est laborum.
         </p>
-      </section>
-    </div>
+      </div>
+    
 
-    <div class="contactForm" id="contactForm">
-      <h3 class="sectionHeader" id="contactHeader">Contact Us</h3>
-      <form id="form">
-        <div class="field">
-          <label for="from_name">Name:</label>
-          <input type="text" name="from_name" id="from_name" placeholder="Your whole name..." required/>
-        </div>
-        <div class="field">
-          <label for="reply_to">Email:</label>
-          <input type="email" name="reply_to" id="reply_to" placeholder="Your email address..." required/>
-        </div>
-        <div class="field">
-          <label for="subject">Subject:</label>
-          <input type="text" name="subject" id="subject" placeholder="Subject..." required/>
-        </div>
-        <div class="field">
-          <label for="message">Message:</label>
-          <textarea name="message" id="message" placeholder="Write your message..." required ></textarea>
-        </div>
+      <div class="contactForm" id="contactForm">
+        <h3 class="sectionHeader" id="contactHeader">Contact Us</h3>
+        <form id="form">
+          <div class="field">
+            <label for="from_name">Name:</label>
+            <input type="text" name="from_name" id="from_name" placeholder="Your whole name..." required/>
+          </div>
+          <div class="field">
+            <label for="reply_to">Email:</label>
+            <input type="email" name="reply_to" id="reply_to" placeholder="Your email address..." required/>
+          </div>
+          <div class="field">
+            <label for="subject">Subject:</label>
+            <input type="text" name="subject" id="subject" placeholder="Subject..." required/>
+          </div>
+          <div class="field">
+            <label for="message">Message:</label>
+            <textarea name="message" id="message" placeholder="Write your message..." required ></textarea>
+          </div>
 
-        <input type="submit" id="button" value="Send Email" />
-      </form>
+          <input type="submit" id="button" value="Send Email" />
+        </form>
+      </div>
     </div>
 
     <div class="footer" id="footer">
@@ -103,8 +109,5 @@
     <script type="text/javascript">
         emailjs.init("cQJDj92NmzqaG9_uX");
     </script>
-<!-- for swipe support on touch interfaces -->
-    <script src="https://leemark.github.io/better-simple-slideshow/demo/js/hammer.min.js"></script>
-
   </body>
 </html>
