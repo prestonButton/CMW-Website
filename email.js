@@ -1,6 +1,5 @@
 const btn = document.getElementById("button");
 
-
 document.getElementById("form").addEventListener("submit", function (event) {
   event.preventDefault();
 
@@ -19,6 +18,6 @@ document.getElementById("form").addEventListener("submit", function (event) {
       alert(JSON.stringify(err));
     }
   );
-  //reset form
+  // reset form
   document.querySelector("form").reset();
 });

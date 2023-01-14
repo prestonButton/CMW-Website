@@ -1,5 +1,5 @@
 /* Navbar Code:
-This code will hide the navbar when the user scrolls down 
+This code will hide the navbar when the user scrolls down
 and show it when the user scrolls up.
 */
 
@@ -10,7 +10,7 @@ window.addEventListener("scroll", () => {
 });
 
 /* Slideshow Code:
-This code will display the images in a slideshow. 
+This code will display the images in a slideshow.
 */
 
 /* Slideshow Code:This code will display the images in a slideshow. */
