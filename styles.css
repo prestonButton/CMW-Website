@@ -1,3 +1,5 @@
+/* global styles */
+
 * {
   box-sizing: border-box;
   scroll-behavior: smooth;
@@ -11,6 +13,7 @@ body {
   color: #fff;
 }
 
+/* *********************************************************************************** */
 /* style the nav element */
 .nav {
   background-color: #030023;
@@ -23,10 +26,12 @@ body {
   padding: 30px;
 }
 
+/* adds styles for the nav to disappear when we scroll */
 .nav.hide {
   top: -100px;
 }
 
+/* hides the hamburger icon */
 .icon {
   display: none;
 }
@@ -72,16 +77,20 @@ body {
   width: 100%;
 }
 
+/* create responsive navbar for when screen is less than 600px wide */
 @media screen and (max-width: 600px) {
+  /* hide the navigation links except hamburger icon */
   .nav > a:not(:first-child) {
     display: none;
   }
+  /* display hamburger icon */
   .nav a.icon {
     float: right;
     display: block;
   }
 }
 
+/* when the hamburger icon is clicked, display the navigation links */
 @media screen and (max-width: 600px) {
   .nav.responsive {
     position: relative;
@@ -115,6 +124,7 @@ body {
  
 }
 
+/* ********************************************************************************* */
 /* Style the header */
 .header {
   overflow: hidden;
@@ -129,6 +139,7 @@ body {
   margin-top: 70px;
 }
 
+/* add responsiveness for small screens: make font size smaller */
 @media screen and (max-width: 600px) {
  .header > h1 {
     font-size: 70px;
@@ -160,6 +171,7 @@ body {
   margin-top: 25;
 }
 
+/* ************************************************************************************** */
 /* Slideshow container */
 .slideshow-container {
   max-width: 1000px;
@@ -182,9 +194,11 @@ img {
 /* Fading animation */
 .fade {
   animation-name: fade;
+  /* make sure animation-duration is equivilent to the delay duration in the slideshow JS function. 5s seems about the right length */
   animation-duration: 5s;
 }
 
+/* specify animation for slideshow:  */
 @keyframes fade {
   0% {
     opacity: 0.0;
@@ -200,11 +214,12 @@ img {
   }
 }
 
+/* *********************************************************************************** */
+/* Style about section */
+
 .sectionHeader {
   font-size: 2rem;
 }
-
-/* Style about section */
 .aboutContainer {
   padding: 50px;
   text-align: center;
@@ -219,6 +234,7 @@ img {
   margin: 25px auto;
 }
 
+/* ***************************************************************************************** */
 /* style the contact section */
 .contactForm {
   padding: 40px;
@@ -283,6 +299,8 @@ input[type="submit"]:hover {
   }
 }
 
+/* ************************************************************************************** */
+/* style the footer */
 .footer {
   background-color: #030023;
   color: #fff;
