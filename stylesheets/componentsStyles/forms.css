@@ -1,0 +1,63 @@
+/* style the contact section */
+.contactForm {
+  padding: 40px;
+  text-align: center;
+  color: #fff;
+}
+
+.contactForm > form {
+  width: 60vw;
+  max-width: 700px;
+  min-width: 300px;
+  margin: 0 auto;
+  margin-top: -25px;
+  padding: 1em;
+}
+
+.contactForm label {
+  text-align: left;
+  display: block;
+  margin: 1rem 0 0.5rem 0;
+}
+
+input,
+textarea,
+select {
+  margin: 10px 0 0 0;
+  width: 100%;
+  min-height: 2.5em;
+}
+
+input,
+textarea {
+  background-color: #0a0a23;
+  border: 1px solid #0a0a23;
+  color: #ffffff;
+}
+textarea {
+  min-height: 10em;
+}
+
+input[type="submit"] {
+  display: block;
+  width: fit-content;
+  margin: 1em auto;
+  height: 2em;
+  font-size: 1.1rem;
+  background-color: #3b3b4f;
+  border-color: white;
+  padding: 0 1em;
+}
+
+input[type="submit"]:hover {
+  background-color: #53536a;
+}
+
+@media screen and (max-width: 600px) {
+  .contactForm {
+    padding: 20px;
+  }
+  .contactForm > form {
+    width: 90vw;
+  }
+}
