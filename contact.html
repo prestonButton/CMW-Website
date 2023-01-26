@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <meta author="Preston Button" date="2023-01-14"
+    <meta name="viewport" content="width=device-width" />
+    <title>Community Metalworks</title>
+
+    <link href="styles.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+  </head>
+
+  <body>
+    <header>
+      <nav class="nav" id="nav">
+        <!-- add logo on left side -->
+          <img class = 'logo' src="assets/logo.svg" alt="logo" />
+        <a href="javascript:void(0);" class="icon" onclick="responsive()">
+          <i class="fa fa-bars"></i>
+        </a>
+        <a href="contact.html" class="navLink">Contact</a>
+        <a href="about.html" class="navLink">About</a>
+        <a href="index.html" class="navLink">Home</a>
+      </nav>
+    </header>
+
+
+      <!-- Contact us section : This form automatically sends an email to an email address of choice propogated with the information
+      the user submits through the form-->
+      <div class="contactForm" id="contactForm">
+        <h3 class="sectionHeader" id="contactHeader">Contact Us</h3>
+        <form id="form">
+          <div class="field">
+            <label for="from_name">Name:</label>
+            <input
+              type="text"
+              name="from_name"
+              id="from_name"
+              placeholder="Your whole name..."
+              required
+            />
+          </div>
+          <div class="field">
+            <label for="reply_to">Email:</label>
+            <input
+              type="email"
+              name="reply_to"
+              id="reply_to"
+              placeholder="Your email address..."
+              required
+            />
+          </div>
+          <div class="field">
+            <label for="subject">Subject:</label>
+            <input
+              type="text"
+              name="subject"
+              id="subject"
+              placeholder="Subject..."
+              required
+            />
+          </div>
+          <div class="field">
+            <label for="message">Message:</label>
+            <textarea
+              name="message"
+              id="message"
+              placeholder="Write your message..."
+              required
+            ></textarea>
+          </div>
+
+          <input type="submit" id="button" value="Send Email" />
+        </form>
+      </div>
+       <!-- Footer adding copyright statement-->
+    <footer class="footer" id="footer">
+      <p>Copyright &copy; <script>document.write(new Date().getFullYear())</script> Community Metalworks.  All Rights Reserved</p>
+    </footer>
+
+
+    <script src="scripts.js"></script>
+    <script src="email.js"></script>
+
+    <script
+        type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+    ></script>
+
+    <script type="text/javascript">
+        emailjs.init("cQJDj92NmzqaG9_uX");
+    </script>
+  </body>
+</html>
