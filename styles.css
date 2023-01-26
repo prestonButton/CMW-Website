@@ -191,7 +191,11 @@ img {
 .fade {
   animation-name: fade;
   /* make sure animation-duration is equivilent to the delay duration in the slideshow JS function. 5s seems about the right length */
+<<<<<<< HEAD
   animation-duration: 10s;
+=======
+  animation-duration: 5s;
+>>>>>>> main
 }
 
 /* specify animation for slideshow:  */

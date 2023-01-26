@@ -1,3 +1,5 @@
+// functionality of emailjs form. Links it to our template created at emailjs.com
+
 const btn = document.getElementById("button");
 
 document.getElementById("form").addEventListener("submit", function (event) {
