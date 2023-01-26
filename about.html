@@ -1,31 +1,31 @@
+<!DOCTYPE html>
 <html lang="en-US">
   <head>
     <meta charset="utf-8" />
     <meta author="Preston Button" date="2023-01-14"
     <meta name="viewport" content="width=device-width" />
     <title>Community Metalworks</title>
-    <link href="styles.css" rel="stylesheet" type="text/css" />
-    <!-- THis is the icons stylesheet from google. Use it for the hamburger icon on small screens -->
+    
+    <link href="styles.css" rel="stylesheet" />
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <!-- favicon of CMW logo -->
+
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
   </head>
+
   <body>
-    <!-- Navigation bar -->
-    <div class="nav" id="nav">
-      <!-- add logo on left side -->
-      <div class="logoDiv">
-        <img class="logo" src="assets/logo.png" alt="logo" />
-      </div>
-      <!-- add hamburger icon on right side. used to make site responsive for small screens-->
-      <a href="javascript:void(0);" class="icon" onclick="responsive()">
-        <i class="fa fa-bars"></i>
-      </a>
-      <!-- add links to sections of page -->
-      <a href="contact.html">Contact</a>
-      <a href="about.html">About</a>
-      <a href="index.html">Home</a>
-    </div>
+    <header>
+      <nav class="nav" id="nav">
+        <!-- add logo on left side -->
+          <img class = 'logo' src="assets/logo.svg" alt="logo" />
+        <a href="javascript:void(0);" class="icon" onclick="responsive()">
+          <i class="fa fa-bars"></i>
+        </a>
+        <a href="contact.html" class="navLink">Contact</a>
+        <a href="about.html" class="navLink">About</a>
+        <a href="index.html" class="navLink">Home</a>
+      </nav>
+    </header>
     <!-- About us section -->
       <div class="aboutContainer" id="aboutContainer">
         <h3 class="sectionHeader" id="aboutHeader">About Us</h3>
@@ -42,31 +42,67 @@
         </p>
         <!-- if the about us section is more than 1 paragraph long, add more <p> tags inside the aboutContainer <div>
           make sure to add the aboutParagraph class and id for styling purposes. -->
+          <p class="aboutParagraph" id="aboutParagraph">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+          culpa qui officia deserunt mollit anim id est laborum.
+        </p><p class="aboutParagraph" id="aboutParagraph">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+          culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+        <p class="aboutParagraph" id="aboutParagraph">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+          culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+        <p class="aboutParagraph" id="aboutParagraph">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+          culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+        <p class="aboutParagraph" id="aboutParagraph">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+          culpa qui officia deserunt mollit anim id est laborum.
+        </p>
       </div>
        <!-- Footer adding copyright statement-->
-    <div class="footer" id="footer">
-      <p>
-        Copyright &copy;
-        <script>
-          document.write(new Date().getFullYear());
-        </script>
-        Community Metalworks. All Rights Reserved
-      </p>
-    </div>
+    <footer class="footer" id="footer">
+      <p>Copyright &copy; <script>document.write(new Date().getFullYear())</script> Community Metalworks.  All Rights Reserved</p>
+    </footer>
 
-    <!-- link to javascript files. first one is for navBar and slideshow function, the second is for the email form functionality-->
+
     <script src="scripts.js"></script>
     <script src="email.js"></script>
 
-    <!-- link to emailjs library: the library used to send an email from the form -->
     <script
-      type="text/javascript"
-      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+        type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
     ></script>
 
-    <!-- initialize emailjs with the user id -->
     <script type="text/javascript">
-      emailjs.init("cQJDj92NmzqaG9_uX");
+        emailjs.init("cQJDj92NmzqaG9_uX");
     </script>
   </body>
 </html>

@@ -6,47 +6,38 @@
     <meta name="viewport" content="width=device-width" />
     <title>Community Metalworks</title>
     
-    <link href="stylesheets/baseStyles/layout.css" rel="stylesheet" type="text/css" />
-    <link href="stylesheets/baseStyles/normalize.css" rel="stylesheet" type="text/css" />
-    <link href="stylesheets/baseStyles/typography.css" rel="stylesheet" type="text/css" />
-    <link href="stylesheets/componentsStyles/buttons.css" rel="stylesheet" type="text/css" />
-    <link href="stylesheets/componentsStyles/forms.css" rel="stylesheet" type="text/css" />
-    <link href="stylesheets/moduleStyles/footer.css" rel="stylesheet" type="text/css" />
-    <link href="stylesheets/moduleStyles/header.css" rel="stylesheet" type="text/css" />
-    <link href="stylesheet/moduleStyles/main.css" rel="stylesheet" type="text/css" />
-    <link href="stylesheets/moduleStyles/nav.css" rel="stylesheet" type="text/css" />
+    <link href="styles.css" rel="stylesheet" />
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
   </head>
 
   <body>
-    
+    <header>
+      <nav class="nav" id="nav">
+        <!-- add logo on left side -->
+          <img class = 'logo' src="assets/logo.svg" alt="logo" />
+        <a href="javascript:void(0);" class="icon" onclick="responsive()">
+          <i class="fa fa-bars"></i>
+        </a>
+        <a href="contact.html" class="navLink">Contact</a>
+        <a href="about.html" class="navLink">About</a>
+        <a href="index.html" class="navLink">Home</a>
+      </nav>
+    </header>
 
-    <div class="nav" id="nav">
-      <!-- add logo on left side -->
-      <div class="logoDiv">
-        <img class = 'logo' src="assets/logo.svg" alt="logo" />
+    <main class="main" id="main"></div>
+      <div class="section header" id="header">
+        <h1>Community Metalworks</h1>
+        <hr />
+        <h2>Quality Metal Components and Fabrication</h2>
+        <p>24 Riverview Drive, Marlboro, N.Y. 12542</p>
       </div>
-      <a href="javascript:void(0);" class="icon" onclick="responsive()">
-        <i class="fa fa-bars"></i>
-      </a>
-      <a href="#contactForm" >Contact</a>
-      <a href="#aboutContainer" >About</a>
-      <a href="index.html" >Home</a>
-      
-    </div>
-    
-    <div class="header" id="header">
-      <h1>Community Metalworks</h1>
-      <hr />
-      <h2>Quality Metal Components and Fabrication</h2>
-      <p>24 Riverview Drive, Marlboro, N.Y. 12542</p>
-    </div>
 
-    <div class="main" id="main">
+   
       <!-- Slideshow container -->
-      <div class="slideshow-container">
+      <div class=" section slideshow-container">
         <!-- Full-width images with number and caption text -->
         <div class="mySlides fade">
           <img src="assets/image0.png" alt="metalworking image">
@@ -62,50 +53,9 @@
 
       </div>
 
-
-      <div class="aboutContainer" id="aboutContainer">
-        <h3 class="sectionHeader" id="aboutHeader">About Us</h3>
-
-        <p class="aboutParagraph" id="aboutParagraph">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum.
-        </p>
-      </div>
-    
-
-      <div class="contactForm" id="contactForm">
-        <h3 class="sectionHeader" id="contactHeader">Contact Us</h3>
-        <form id="form">
-          <div class="field">
-            <label for="from_name">Name:</label>
-            <input type="text" name="from_name" id="from_name" placeholder="Your whole name..." required/>
-          </div>
-          <div class="field">
-            <label for="reply_to">Email:</label>
-            <input type="email" name="reply_to" id="reply_to" placeholder="Your email address..." required/>
-          </div>
-          <div class="field">
-            <label for="subject">Subject:</label>
-            <input type="text" name="subject" id="subject" placeholder="Subject..." required/>
-          </div>
-          <div class="field">
-            <label for="message">Message:</label>
-            <textarea name="message" id="message" placeholder="Write your message..." required ></textarea>
-          </div>
-
-          <input type="submit" id="button" value="Send Email" />
-        </form>
-      </div>
-    </div>
-
-    <div class="footer" id="footer">
+    <footer class="footer" id="footer">
       <p>Copyright &copy; <script>document.write(new Date().getFullYear())</script> Community Metalworks.  All Rights Reserved</p>
-
+    </footer>
 
 
     <script src="scripts.js"></script>
