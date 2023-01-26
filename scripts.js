@@ -8,4 +8,3 @@ window.addEventListener("scroll", () => {
 
   navbar.classList[window.scrollY > 50 ? "add" : "remove"]("hide");
 });
-
