@@ -12,7 +12,7 @@ export default function App() {
   return (
     <Router>
       <nav className="navbar">
-        <Link to="/" className="navLink">
+        <Link to="/" className="Logo">
           <img src={Logo} alt="Logo" />
         </Link>
         <div className="linksDiv">
