@@ -4,12 +4,14 @@ import Home from './components/Home';
 import About from './components/About';
 import Gallery from './components/Gallery';
 import Contact from './components/Contact';
+import './App.css';
+import './components/Nav.css';
 
 
 export default function App() {
   return (
     <Router>
-      <nav>
+      <nav className='navbar'>
         <Link to="/" className="navLink">
           Home
         </Link>
