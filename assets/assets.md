@@ -2,7 +2,7 @@
 
 This file will cover the naming of images for the slideshow section
 
-1. I suggest naming of images should folow the standard set previously: image(number).png
+1. I suggest naming of images should follow the standard set previously: image(number).png
 2. start indexing images at 0 is recommended 
 3. .png file format is suggested
 4. Less than 10 images is preferred
