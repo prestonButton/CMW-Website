@@ -5,31 +5,12 @@ import About from "./components/About";
 import Gallery from "./components/Gallery";
 import Contact from "./components/Contact";
 import "./App.css";
-import "./components/Nav.css";
-import Logo from "./assets/logo.svg";
+import Navbar from "./components/Navbar";
 
 export default function App() {
   return (
     <Router>
-      <nav className="navbar">
-        <Link to="/" className="Logo">
-          <img src={Logo} alt="Logo" />
-        </Link>
-        <div className="linksDiv">
-          <Link to="/" className="navLink">
-            Home
-          </Link>
-          <Link to="about" className="navLink">
-            About
-          </Link>
-          <Link to="gallery" className="navLink">
-            Gallery
-          </Link>
-          <Link to="contact" className="navLink">
-            Contact
-          </Link>
-        </div>
-      </nav>
+      <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="about" element={<About />} />
