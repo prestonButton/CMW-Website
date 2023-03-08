@@ -1,11 +1,32 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Logo from "../assets/logo.svg";
 import "./Navbar.css";
 import { FaBars, FaTimes } from "react-icons/fa";
 
 export default function Navbar() {
-    const [nav, setNav] = useState(false);
+    {
+      /* Now I need to use the <FaBars /> and <FaTimes />
+                icons to implement  responsiveness. If the screen width is less than 
+                800px, we need to display <FaBars /> in the navbar, and when the user clicks
+                on it, the .navLink items are stacked full width, vertically, and <FaTimes /> 
+                is in the top-right corner. If the user clicks <FaTimes /> the .navLinks items disappear*/
+    }
+    const [width, setWidth] = useState(window.innerWidth);
+    const [isOpen, setIsOpen] = useState(false);
+    const isResponsive = width < 800;
+    const handleClick = () => setClick(prevClick => !prevClick);
+    
+    useEffect(() => {
+        function handleResize() {
+            setWidth(window.innerWidth);
+        }
+        window.addEventListener("resize", handleResize);
+
+        return(
+            window.removeEventListener("resize", handleResize)
+        )
+    }, []);
 
     return (
         <nav className="navbar">
@@ -13,20 +34,24 @@ export default function Navbar() {
                 <img src={Logo} alt="Logo" />
             </Link>
             <div className="linksDiv">
-                <Link to="/" className="navLink">
+                {!isResponsive && <Link to="/" className="navLink">
                   Home
-                </Link>
-                <Link to="about" className="navLink">
+                </Link>}
+                {!isResponsive && <Link to="about" className="navLink">
                   About
-                </Link>
-                <Link to="gallery" className="navLink">
+                </Link>}
+                {!isResponsive && <Link to="gallery" className="navLink">
                   Gallery
-                </Link>
-                <Link to="contact" className="navLink">
+                </Link>}
+                {!isResponsive && <Link to="contact" className="navLink">
                   Contact
-                </Link>
+                </Link>}
+                {isResponsive  && !isOpen && <FaBars className="bars" onClick={handleClick} />}
+                {isResponsive && isOpen && <FaTimes className="times" onClick={handleClick} />}
             </div>
         </nav>
+
+
         
     );
 }
