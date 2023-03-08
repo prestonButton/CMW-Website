@@ -13,9 +13,9 @@ export default function Navbar() {
                 is in the top-right corner. If the user clicks <FaTimes /> the .navLinks items disappear*/
     }
     const [width, setWidth] = useState(window.innerWidth);
-    const [isOpen, setIsOpen] = useState(false);
+    const [isOpen, setIsOpen] = useState(true);
     const isResponsive = width < 800;
-    const handleClick = () => setClick(prevClick => !prevClick);
+    const handleClick = () => setIsOpen(prevIsOpen => !prevIsOpen);
     
     useEffect(() => {
         function handleResize() {
