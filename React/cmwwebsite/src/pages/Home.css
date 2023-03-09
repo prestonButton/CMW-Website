@@ -1,0 +1,49 @@
+.Home--header_div {
+  margin-top: 80px;
+  width: 100vw;
+  height: 100vh;
+  text-align: center;
+  position: relative;
+  background-image: url(../assets/background-image.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 2;
+}
+
+.Home--header_div::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.5);
+  opacity: 0.5;
+}
+
+.Home--header_text {
+  position: relative;
+  z-index: 3;
+}
+
+.Home--header {
+  font-size: 6rem;
+  font-weight: 600;
+  color: #000;
+  margin-bottom: 0;
+}
+
+.Home--header-sub {
+  font-size: 2rem;
+  font-weight: 400;
+  color: #000;
+  text-shadow: 0 0 10px #454545;
+}
+
+hr {
+  width: 70%;
+  margin: 0 auto;
+  color: #000;
+  border: 0.5px solid #000;
+}
