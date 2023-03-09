@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import logoFull from "../assets/logo-full.svg";
+import logoFull from "../assets/logoFull.svg";
 import "./Footer.css";
 
 export default function Footer() {
@@ -29,8 +29,14 @@ export default function Footer() {
           className="footer--logo"
         />
         <div className="footer--about">
-          <p>24 Riverview Drive Marlboro NY 12542</p>
-          <p>Monday - Friday, 8:00am - 4:30pm</p>
+          <div className="footer--about-address">
+            <p>24 Riverview Drive </p>
+            <p>Marlboro NY, 12542</p>
+          </div>
+          <div className="footer--about-hours">
+            <p>Monday - Friday</p>
+            <p>8:00am - 4:30pm</p>
+          </div>
         </div>
       </div>
 
