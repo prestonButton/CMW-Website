@@ -1,61 +1,133 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import Logo from "../assets/logo.svg";
-import "./Navbar.css";
 import { FaBars, FaTimes } from "react-icons/fa";
+import logo from "../assets/logo.svg";
+import "./Navbar.css";
+
+// Create a div that holds the icons for when the screen is small.
+// if the screen is small, then the icons will be displayed. If the menu is open,
+// then the <FaTimes /> icon will be displayed. If the menu is closed, then the
+// <FaBars /> icon will be displayed.
+// When clicked it will close the menu if it is open, or open the menu if it is closed.
+// The menu will be closed by default.
+// the icon will toggle between the two icons depending on the state of the menu.
+function Icons(props) {
+  return (
+    (props.isResponsive && (
+      <div className="icons">
+        {props.isMenuOpen ? (
+          <FaTimes onClick={props.onClick} className="icon" />
+        ) : (
+          <FaBars onClick={props.onClick} className="icon" />
+        )}
+      </div>
+    )) ||
+    null
+  );
+}
+// create a div that holds the navigation links for the website.
+// they are displayed normally if the screen is large, or if the screen is small
+// and the menu is open, they will be displayed in a column.
+// if the screen is small and the menu is closed, then the links will not be displayed.
+function Links(props) {
+  return (
+    <div
+      // sorry about the nested ternary, but if the screen is small and the menu is open,
+      // then the links will be displayed. If the screen is small and the menu is closed,
+      // then the links will not be displayed. If the screen is large, then the links will
+      // be displayed.
+      className={
+        props.isResponsive
+          ? props.isMenuOpen
+            ? "responsive"
+            : "hidden"
+          : "navLinks"
+      }
+    >
+      <Link to="/" className="navLink" onClick={props.onClick}>
+        Home
+      </Link>
+      <Link to="/about" className="navLink" onClick={props.onClick}>
+        About
+      </Link>
+      <Link to="/gallery" className="navLink" onClick={props.onClick}>
+        Gallery
+      </Link>
+      <Link to="/contact" className="navLink" onClick={props.onClick}>
+        Contact
+      </Link>
+    </div>
+  );
+}
+
+//create the navbar component
 
 export default function Navbar() {
-  {
-    /* Now I need to use the <FaBars /> and <FaTimes />
-                icons to implement  responsiveness. If the screen width is less than 
-                800px, we need to display <FaBars /> in the navbar, and when the user clicks
-                on it, the .navLink items are stacked full width, vertically, and <FaTimes /> 
-                is in the top-right corner. If the user clicks <FaTimes /> the .navLinks items disappear*/
-  }
-  const [width, setWidth] = useState(window.innerWidth);
-  const [isOpen, setIsOpen] = useState(true);
-  const isResponsive = width < 800;
-  const handleClick = () => setIsOpen((prevIsOpen) => !prevIsOpen);
+  //Create state variables for the menu and screen size:
+  //isMenuOpen is the state variable for the menu. It is true if the menu is open,
+  //and false if the menu is closed.
+  //setIsMenuOpen is the function that will change the state of the menu.
+  //isResponsive is the state variable for the screen size. It is true if the screen
+  //is small, and false if the screen is large.
+  //setIsResponsive is the function that will change the state of the screen size.
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isResponsive, setIsResponsive] = useState(window.innerWidth <= 700);
 
+  //Create a function that will change the state of the menu when the icon is clicked.
+  //If the menu is open, then it will close the menu. If the menu is closed, then it
+  //will open the menu.
+  const toggleMenu = () => {
+    setIsMenuOpen((prevIsMenuOpen) => !prevIsMenuOpen);
+  };
+
+  //Create a function that will change the state of the screen size when the window is resized.
+  //If the screen is small, then it will set the state to true. If the screen is large, then
+  //it will set the state to false.
+  const handleResize = () => {
+    window.innerWidth <= 700 ? setIsResponsive(true) : setIsResponsive(false);
+  };
+
+  //Create a function that will change the state of the menu when the window is resized.
+  //If the screen is small, then it will close the menu. If the screen is large, then
+  //it will open the menu.
+  const handleResizeMenu = () => {
+    window.innerWidth <= 800 ? setIsMenuOpen(false) : setIsMenuOpen(true);
+  };
+
+  //Create a function that will change the state of the screen size and menu when the window
+  //is resized.
+  const handleResizeAll = () => {
+    handleResize();
+    handleResizeMenu();
+  };
+
+  const closeNavbar = () => {
+    setIsMenuOpen(false);
+  };
+
+  //Add an event listener that will call the handleResizeAll function when the window is resized.
   useEffect(() => {
-    function handleResize() {
-      setWidth(window.innerWidth);
-    }
-    window.addEventListener("resize", handleResize);
+    window.addEventListener("resize", handleResizeAll);
+    return () => window.removeEventListener("resize", handleResizeAll);
+  });
 
-    return window.removeEventListener("resize", handleResize);
-  }, []);
-
+  //return the navbar component
   return (
-    <nav className="navbar">
-      <Link to="/" className="Logo">
-        <img src={Logo} alt="Logo" />
+    <div className={isMenuOpen ? "navbar" : "navbar closed"}>
+      <Link to="/" className="logo" onClick={closeNavbar}>
+        <img src={logo} alt="logo" />
       </Link>
-      {/* If the Screen is less than 800px wide (isResponsive) hide the navLinks,
-      instead show <FaBars />. Then, if the user clicks on <FaBars /> display the navLink items,
-      The background should be the same as the navBar, and should cover the full
-      screen width. The <FaBars /> element should switch to the <FaTimes /> element.
-      If the user clicks on the <FaTimes /> element, the navLink items should disappear 
-      and the <FaTimes /> element should switch back to the <FaBars /> element*/}
-      <div className="linksDiv">
-        <Link to="/" className="navLink">
-          Home
-        </Link>
-        <Link to="about" className="navLink ">
-          About
-        </Link>
-        <Link to="gallery" className="navLink ">
-          Gallery
-        </Link>
-        <Link to="contact" className="navLink ">
-          Contact
-        </Link>
-        <div className="iconsDiv">
-          <FaBars className="bars" onClick={handleClick} />
 
-          <FaTimes className="times" onClick={handleClick} />
-        </div>
-      </div>
-    </nav>
+      <Icons
+        isResponsive={isResponsive}
+        isMenuOpen={isMenuOpen}
+        onClick={toggleMenu}
+      />
+      <Links
+        isResponsive={isResponsive}
+        isMenuOpen={isMenuOpen}
+        onClick={closeNavbar}
+      />
+    </div>
   );
 }
