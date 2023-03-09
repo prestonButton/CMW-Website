@@ -9,7 +9,9 @@
         "ignore": [
           "user-select",
           "scroll-behavior",
-          "width: fit-content"
+          "width: fit-content",
+          "-webkit-text-size-adjust",
+          "font-synthesis"
         ]
       }
     ],
