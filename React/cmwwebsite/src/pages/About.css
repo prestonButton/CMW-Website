@@ -1,0 +1,14 @@
+.About--header_div {
+  margin-top: 80px;
+  width: 100vw;
+  height: 100vh;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  color: #030023
+}
+
+.About--header_text {
+    width: 70%;
+    margin: 0 auto;
+}

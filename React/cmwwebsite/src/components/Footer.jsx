@@ -40,9 +40,9 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* <div className='copyright'>
-                <p>Copyright &copy; {document.write(new Date().getFullYear())} Community Metalworks. All Rights Reserved</p>
-            </div> */}
+      <div className='copyright'>
+                <p>Copyright &copy; {new Date().getFullYear()} Community Metalworks. All Rights Reserved</p>
+            </div>
     </footer>
   );
 }

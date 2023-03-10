@@ -67,3 +67,10 @@
     min-width: 150px;
 }
 
+.copyright {
+    text-align: center;
+    color: #000;
+    font-size: 0.8rem;
+    margin-top: 10px;
+}
+
