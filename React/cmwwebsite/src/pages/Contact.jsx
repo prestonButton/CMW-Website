@@ -1,81 +1,74 @@
 import React, { useState } from "react";
-import './Contact.css';
+import emailjs from "emailjs-com";
 
-
-export default function Contact() {
-  const [form, setForm] = useState({
-    from_name: "",
-    reply_to: "",
-    subject: "",
+const Contact = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
     message: "",
   });
 
-  function handleChange(event) {
-    setForm((prevFormData) => {
-      return {
-        ...prevFormData,
-        [event.target.name]: event.target.value,
-      };
-    });
-  }
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    emailjs
+      .sendForm(
+        "service_lx4v0zk",
+        "cmw-contact-form",
+        e.target,
+        "cQJDj92NmzqaG9_u"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+    setFormData({ name: "", email: "", message: "" });
+  };
 
   return (
-    <div className="contact">
-      <h1>Contact Us</h1>
-      <hr />
-      <div className="contactForm" id="contactForm">
-        <form id="form">
-          <div className="field">
-            <label htmlFor="from_name">Name:</label>
-            <input
-              type="text"
-              name="from_name"
-              id="from_name"
-              placeholder="Your whole name..."
-              onChange={handleChange}
-              value={form.from_name}
-              required
-            />
-          </div>
-          <div className="field">
-            <label htmlFor="reply_to">Email:</label>
-            <input
-              type="email"
-              name="reply_to"
-              id="reply_to"
-              placeholder="Your email address..."
-              onChange={handleChange}
-              value={form.reply_to}
-              required
-            />
-          </div>
-          <div className="field">
-            <label htmlFor="subject">Subject:</label>
-            <input
-              type="text"
-              name="subject"
-              id="subject"
-              placeholder="Subject..."
-              onChange={handleChange}
-              value={form.subject}
-              required
-            />
-          </div>
-          <div className="field">
-            <label htmlFor="message">Message:</label>
-            <textarea
-              name="message"
-              id="message"
-              placeholder="Write your message..."
-              onChange={handleChange}
-              value={form.message}
-              required
-            />
-          </div>
-
-          <input type="submit" id="button" value="Send Email" />
-        </form>
-      </div>
+    <div>
+      <h2>Contact Us</h2>
+      <form onSubmit={handleSubmit}>
+        <div>
+          <label>Name:</label>
+          <input
+            type="text"
+            value={formData.name}
+            onChange={handleChange}
+            name="name"
+            required
+          />
+        </div>
+        <div>
+          <label>Email:</label>
+          <input
+            type="email"
+            value={formData.email}
+            onChange={handleChange}
+            name="email"
+            required
+          />
+        </div>
+        <div>
+          <label>Message:</label>
+          <textarea
+            value={formData.message}
+            onChange={handleChange}
+            name="message"
+            required
+          />
+        </div>
+        <button type="submit">Send Message</button>
+      </form>
     </div>
   );
-}
+};
+
+export default Contact;
